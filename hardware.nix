@@ -95,20 +95,20 @@ services.xserver.videoDrivers = ["nvidia"];
 
 
 
-        fileSystems."/" =
-        { device = "pluto/root";
-                fsType = "zfs";
-        };
+    fileSystems."/" =
+    { device = "pluto/root";
+            fsType = "zfs";
+    };
 
-        fileSystems."/home" =
-        { device = "pluto/home";
-                fsType = "zfs";
-        };
+    fileSystems."/home" =
+    { device = "pluto/home";
+            fsType = "zfs";
+    };
 
-        fileSystems."/boot" =
-        { device = "/dev/disk/by-uuid/B980-9D52";
-                fsType = "vfat";
-        options = [ "fmask=0022" "dmask=0022" ];
-        };
+    fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/B980-9D52";
+            fsType = "vfat";
+    options = [ "fmask=0022" "dmask=0022" ];
+    };
 
 }

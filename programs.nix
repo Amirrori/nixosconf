@@ -9,11 +9,13 @@
         git
         htop
         sbctl
-	e2fsprogs
-	tpm2-tools
-	qemu_kvm
-	python3
+        e2fsprogs
+        tpm2-tools
+        qemu_kvm
+        python3
     ];
+    programs.zsh.enable = true;
+    
     programs.steam = {
        enable = true;
        remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play

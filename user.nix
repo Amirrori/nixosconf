@@ -9,7 +9,6 @@
 		shell = pkgs.zsh;
 		
 	};
-	programs.zsh.enable = true;
 	users.users.root.shell = pkgs.zsh;
 
 }
