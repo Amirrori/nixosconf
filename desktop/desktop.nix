@@ -28,6 +28,8 @@
 				size = "compact";
 			};
 		};
+		cursorTheme.name = "adwaita";
+
 	};
 	
 	users.users.greeter = {
@@ -52,8 +54,7 @@
 	};
 	
 	environment.systemPackages = with pkgs; [ greetd.regreet ];
-
-	
-    # Enable touchpad support (enabled default in most desktopManager).
+	# Enable touchpad support (enabled default in most desktopManager).
     services.libinput.enable = true;
+
 }
