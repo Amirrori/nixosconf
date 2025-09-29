@@ -5,7 +5,7 @@
 		withUWSM = false;
 		xwayland.enable = true;
 	};
-	
+	# Regreet configs
 	programs.regreet = {
 		enable = true;
 		
