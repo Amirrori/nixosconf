@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+    # enable audio shit idk
 	security.rtkit.enable = true;
 	services.pipewire = {
 		enable = true;

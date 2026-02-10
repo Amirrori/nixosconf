@@ -26,7 +26,7 @@
 				
 				modules = [
 					({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-					./deimos
+					./pluto
 				];
 			};
 		};
