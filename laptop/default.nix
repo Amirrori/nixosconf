@@ -1,0 +1,26 @@
+{ pkgs, ...}:
+{
+	boot.kernelModules = [ "kvm-intel" ];
+	boot.kernelParams = [ "i915.enable_gvt=1" "i915.enable_guc=0" "intel_iommu=on" "i915.enable_fbc=0" "i915.enable_psr=0"];
+
+		
+	environment.systemPackages = with pkgs; [
+		acpi
+		brightnessctl
+	];
+
+	services = {
+		logind.settings.Login.HandleLidSwitch = "ignore";
+		
+		throttled = {
+			enable = true;
+			extraConfig = import ./throttled.nix;
+		};
+	};
+	
+	imports = [
+#		./tpm.nix
+		./hardware.nix
+		./tlp.nix
+	];
+}
