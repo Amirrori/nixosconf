@@ -2,7 +2,7 @@
 	boot = {
 	consoleLogLevel = 3;
 	initrd.verbose = false;
-	loader.timeout = 0;
+	loader.timeout = 7;
 
 #		plymouth = {
 #			enable = true;

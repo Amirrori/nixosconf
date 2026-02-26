@@ -1,7 +1,8 @@
 {
 	boot = {
 		initrd.kernelModules = [ "kvmgt" "vfio-iommu-type1" "mdev"];
-		kernelParams = [ "i915.enable_gvt=1" "i915.enable_guc=0" "i915.enable_fbc=0" "intel_iommu=on" ];
+		# added psr and dc
+		kernelParams = [ "i915.enable_gvt=1" "i915.enable_guc=0" "i915.enable_fbc=0" "intel_iommu=on" "i915.enable_dc=2" "i915.enable_psr=0" ];
 		extraModulePackages = [ ];
 	};
 
