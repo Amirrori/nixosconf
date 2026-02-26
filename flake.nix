@@ -4,11 +4,11 @@
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
 		nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-#		lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
+		lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
 		catppuccin.url = "github:catppuccin/nix";
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, catppuccin, ... } @ inputs: let
+	outputs = { self, nixpkgs, nixpkgs-unstable, catppuccin, lanzaboote,  ... } @ inputs: let
 		system = "x86_64-linux";
 
 		overlay-unstable = final: prev: {		

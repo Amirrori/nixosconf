@@ -1,5 +1,12 @@
 { pkgs, ... }:
 {
+	security.auditd.enable = true;
+	security.sudo.execWheelOnly = true;
+  	security.audit.enable = true;
+  	security.audit.rules = [
+    		"-a exit,always -F arch=b64 -S execve"
+  	];
+	nix.settings.allowed-users = [ "@wheel" ];
 	security.polkit.enable = true;
 	security.polkit.extraConfig = ''
 		polkit.addRule(function(action, subject) {

@@ -17,6 +17,7 @@
 			];
 		};
 	};
+services.upower.enable = true;
 services.udisks2.enable = true;
 services.udisks2.settings = {
   "udisks2.conf" = {

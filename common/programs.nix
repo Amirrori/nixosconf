@@ -1,16 +1,21 @@
-{ pkgs, ... }:
+{ pkgs, lib ,... }:
 {
 # Main essential programs(Rest will be installed through HomeManager)
-	environment.systemPackages = with pkgs; [
+environment.defaultPackages = lib.mkForce [];
+environment.systemPackages = with pkgs; [
         vim
         zip
+	sbctl
+	perl
         git
 	wget
         e2fsprogs
         qemu_kvm
 	udiskie
 	dunst
-	];
+	tmux
+	rsync
+];
 # Steam, disabled for now try to implement into home manager
 
 #	programs.steam = {
