@@ -5,6 +5,7 @@
 	hardware = {
 		enableAllHardware = true;
 		enableAllFirmware = true;
+		opengl.enable = true;
 		
 		graphics = {
 			enable = true;		
@@ -17,9 +18,31 @@
 			];
 		};
 	};
-services.upower.enable = true;
-services.udisks2.enable = true;
-services.udisks2.settings = {
+  # NVIDIA configuration
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+
+    powerManagement.enable = true;
+    powerManagement.finegrained = false;
+
+    open = false;
+    nvidiaSettings = true;
+
+    prime = {
+      offload.enable = false;
+      sync.enable = true;
+#      offload.enableOffloadCmd = true;
+
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+
+    };
+  };
+  services.upower.enable = true;
+  services.udisks2.enable = true;
+  services.udisks2.settings = {
   "udisks2.conf" = {
     program_options = {
       file_manager = "${pkgs.xfce.thunar}/bin/thunar";

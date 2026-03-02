@@ -34,12 +34,13 @@
       RUNTIME_PM_ON_BAT = "auto";
         
       NMI_WATCHDOG = 0;
-      START_CHARGE_THRESH_BAT0 = 70;
-      STOP_CHARGE_THRESH_BAT0 = 80;
       START_CHARGE_THRESH_BAT1 = 70;
       STOP_CHARGE_THRESH_BAT1 = 80;
+      START_CHARGE_THRESH_BAT0 = 40;
+      STOP_CHARGE_THRESH_BAT0 = 80;
     };
   };
+services.fwupd.enable = true;
 }
 
 
