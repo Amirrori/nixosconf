@@ -15,6 +15,12 @@ environment.systemPackages = with pkgs; [
 	dunst
 	tmux
 	rsync
+	libgcc
+	glfw
+	gcc
+	libGL
+	pkg-config
+
 ];
 # Steam, disabled for now try to implement into home manager
 
