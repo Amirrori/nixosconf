@@ -10,7 +10,6 @@
 	];
 
 	services = {
-		logind.settings.Login.HandleLidSwitch = "ignore";
 		
 		throttled = {
 			enable = true;

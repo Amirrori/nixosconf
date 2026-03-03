@@ -41,6 +41,12 @@
     };
   };
   services.upower.enable = true;
+services.logind.settings.Login = {
+  HandlePowerKey        = "suspend";
+  HandleSuspendKey      = "suspend";
+  HandleLidSwitch       =  "suspend";
+  HandleLidSwitchDocked = "suspend";
+};
   services.udisks2.enable = true;
   services.udisks2.settings = {
   "udisks2.conf" = {
