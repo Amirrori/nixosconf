@@ -2,16 +2,16 @@
 	boot = {
 	consoleLogLevel = 3;
 	initrd.verbose = false;
-	loader.timeout = 0;
+	loader.timeout = 7;
 
-		plymouth = {
-			enable = true;
-			theme = "catppuccin-mocha";
-
-			themePackages = [(pkgs.catppuccin-plymouth.override{
-				variant = "mocha";
-			})];
-		};
+#		plymouth = {
+#			enable = true;
+#			theme = "catppuccin-mocha";
+#
+#			themePackages = [(pkgs.catppuccin-plymouth.override{
+#				variant = "mocha";
+#			})];
+#		};
 
 		kernelParams = [
 			"quiet"
