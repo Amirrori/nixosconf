@@ -47,5 +47,5 @@ environment.systemPackages = with pkgs; [
 	
 #	services.udisks2.enable = true;
 	users.users.root.shell = pkgs.zsh;
-	 services.mullvad-vpn.enable = true;
+	services.mullvad-vpn.enable = true;
 }

@@ -2,7 +2,7 @@
 {
 	users.users.shrewd = {
 		isNormalUser = true;
-		description = "Mohammad H Amiri";
+		description = import ./user.secret;
 		extraGroups = [ "networkmanager" "wheel" ];
 		shell = pkgs.zsh;
 	};
