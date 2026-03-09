@@ -2,9 +2,11 @@
 
 # Brief
 
-This project is the complete version of my NixOS configs that works. I decided to implement version control for two purposes. One being to be able to keep track of changes and deploy my nix setup anywhere, Second being for people to be able to utilize and learn from what I have learnt in the last year(at least as of writing this).
+This project is the complete version of my NixOS configs that works. I decided to implement version control for two purposes. One being to be able to keep track of changes and deploy my nix setup anywhere, Second being for people to be able to utilize and learn from what I have learnt in the last year (at least as of writing this).
 
-Note: This is designed for the thinkpad t480 although can be adjusted for other computers aswell. 
+> [!IMPORTANT]
+> This is designed for the thinkpad t480 although can be adjusted for other computers aswell.
+
 ## Features
 
 Main features of this setup are:
