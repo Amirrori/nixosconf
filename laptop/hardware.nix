@@ -31,8 +31,8 @@
     nvidiaSettings = true;
 
     prime = {
-      offload.enable = false;
-      sync.enable = true;
+      sync.enable = false;
+      offload.enable = true;
 #      offload.enableOffloadCmd = true;
 
       intelBusId = "PCI:0:2:0";

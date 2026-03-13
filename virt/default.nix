@@ -8,9 +8,9 @@
 			runAsRoot = true;
 			swtpm.enable = true;
 		};
-		hooks.qemu = {
-      		"gvtg" = ./hook.py;
-		};
+		# hooks.qemu = {
+  #     		"gvtg" = ./hook.py;
+		# };
 	};
 
 }
