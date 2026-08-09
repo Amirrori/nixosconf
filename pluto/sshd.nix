@@ -1,10 +1,10 @@
 {
   services.openssh = {
-    passwordAuthentication = false;
+    settings.PasswordAuthentication = false;
     allowSFTP = false; # Don't set this if you need sftp
-    challengeResponseAuthentication = false;
+    settings.KbdInteractiveAuthentication = false;
+    # Removed AllowTcpForwarding; redundant/unused.
     extraConfig = ''
-      AllowTcpForwarding yes
       X11Forwarding no
       AllowAgentForwarding no
       AllowStreamLocalForwarding no

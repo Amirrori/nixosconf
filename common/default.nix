@@ -9,5 +9,6 @@
 		./boot.nix
 		./programs.nix
 		./security.nix
+        ./plymouth.nix
 	];
 }

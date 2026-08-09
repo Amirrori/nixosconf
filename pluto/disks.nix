@@ -1,14 +1,21 @@
 {
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b346034f-4917-4634-9507-38cab352002c";
-      fsType = "ext4";
+    { device = "root";
+      fsType = "zfs";
     };
 
+  fileSystems."/home" =
+    { device = "root/home";
+      fsType = "zfs";
+    };
+
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8E9D-EF2A";
+    { device = "/dev/disk/by-uuid/B683-7094";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
+
 
 	services.zram-generator = {
 
@@ -19,7 +26,7 @@
 			zram0 = {
 
 				compression-algorithm = "lz4";
-				zram-size = "min(ram/2,8192)";
+				zram-size = "min(ram/2,4096)";
 				swap-priority = "200";
 
 			};
@@ -27,7 +34,7 @@
 			zram1 = {
 
 				compression-algorithm = "zstd";
-				zram-size = "min(ram,16384)";
+				zram-size = "min(ram,4096)";
 				swap-priority = "100";
 
 			};

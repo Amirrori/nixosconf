@@ -25,7 +25,7 @@
 				specialArgs = {inherit inputs;};
 				
 				modules = [
-					({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+					({ ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 					./pluto
 				];
 			};
