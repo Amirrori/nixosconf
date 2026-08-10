@@ -2,7 +2,7 @@
   	description = "main nix flakes I think";
 
 	inputs = {
-		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
+		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-26.05";
 		nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 		lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
 		catppuccin.url = "github:catppuccin/nix";
