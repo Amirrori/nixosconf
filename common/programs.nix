@@ -1,13 +1,9 @@
-{ pkgs, lib ,... }:
+{ pkgs, lib, inputs ,... }:
 {
 # Main essential programs(Rest will be installed through HomeManager)
 environment.defaultPackages = lib.mkForce [];
-environment.systemPackages = with pkgs; [
-	sbctl
-    e2fsprogs
-    qemu_kvm
-    opentabletdriver
-];
+environment.systemPackages = import (inputs.local + "/programs.nix") pkgs;
+
 programs = {
   steam = {
     enable = true;
@@ -16,11 +12,13 @@ programs = {
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 };
-
 # enable zsh and assign root to use it
 	programs.zsh = {
 		enable = true;
 	};
-	services.mullvad-vpn.enable = true;
+    services.mullvad-vpn = {
+        enable = true;
+        package = pkgs.mullvad-vpn;
+    };
     services.flatpak.enable = true;
 }

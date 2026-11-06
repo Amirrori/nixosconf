@@ -7,6 +7,8 @@
     ];
     users.groups.libvirtd.members = ["shrewd"];
     virtualisation.spiceUSBRedirection.enable = true;
+    virtualisation.libvirtd.onBoot = "start";
+    virtualisation.podman.enable = true;
 	virtualisation.libvirtd = {
 		enable = true;
 

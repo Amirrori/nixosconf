@@ -32,10 +32,10 @@ This will be updated in the future, Although I assume that you know how to use N
 - Setup secureBoot with lanzaboote
 - OPTIONAL: setup tpm
 - change the disk configuration files to your disks at pluto/disks.nix
-- add a user.secret having your user description in a string format within users/
+- add a user.secret having your user description in a string format within local/
 - Configure or fully disable throttled and TLP
 - Depending if you use Nvidia or any other card, setup hardware.nix accordingly as well (cannot do that for you)
-- Add or Remove programs to your liking in common/programs.nix
+- Add or Remove programs to your liking in local/programs.nix, and rebuild with --override-input local path:$PWD/local
 
 ## What now
 

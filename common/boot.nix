@@ -1,11 +1,11 @@
-{lib, pkgs, inputs, ... }:
+{ lib, pkgs, inputs, ... }:
 {
 # Import Lanzaboote(Handles secureBoot)
 	imports = [ inputs.lanzaboote.nixosModules.lanzaboote ];
 # Boot related Kernel Modules
 	boot = {
 		initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod"];
-         kernelPackages = pkgs.linuxPackages; 
+        kernelPackages = pkgs.linuxPackages_6_12;
          # log_priority 3 is error level logging
          kernelParams = [
             "quiet"
@@ -31,5 +31,6 @@
 		consoleLogLevel = 3;
 		initrd.verbose = false;
 		loader.timeout = 7;
+        zfs.forceImportRoot = false;
 	};
 }	

@@ -6,6 +6,10 @@
 		nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 		lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
 		catppuccin.url = "github:catppuccin/nix";
+        local = {
+            url = "path:./local-empty";
+            flake = false;
+        };
 	};
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, catppuccin, lanzaboote,  ... } @ inputs: let
