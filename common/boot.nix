@@ -15,7 +15,7 @@
 			"rd.systemd.show_status=auto"
 		 ];
 		kernel.sysctl = {
-			"vm.swappiness" = 60;
+			# "vm.swappiness" = 60;
 			"vm.page-cluster" = 0;
 		};
 	# enable lanzaboote

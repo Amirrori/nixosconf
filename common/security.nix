@@ -7,7 +7,7 @@
     		"-a exit,always -F arch=b64 -S execve"
   	];
 	nix.settings.allowed-users = [ "@wheel" ];
-	security.polkit.enable = true;
+	# security.polkit.enable = true;
     # allow users to reboot/power off when other users are active
 	security.polkit.extraConfig = ''
 		polkit.addRule(function(action, subject) {

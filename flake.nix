@@ -3,33 +3,19 @@
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-26.05";
-		nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 		lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
-		catppuccin.url = "github:catppuccin/nix";
         local = {
             url = "path:./local-empty";
             flake = false;
         };
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, catppuccin, lanzaboote,  ... } @ inputs: let
-		system = "x86_64-linux";
-
-		overlay-unstable = final: prev: {		
-			unstable = import nixpkgs-unstable {
-				inherit system;
-				config.allowUnfree = true;
-			};
-		};
-
-	in {
+	outputs = { nixpkgs,  ... } @ inputs: {
 		nixosConfigurations = {
 			pluto = nixpkgs.lib.nixosSystem {
-				inherit system;
 				specialArgs = {inherit inputs;};
 				
 				modules = [
-					({ ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 					./pluto
 				];
 			};

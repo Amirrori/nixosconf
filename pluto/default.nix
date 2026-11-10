@@ -9,7 +9,7 @@
 	# global DNS server that any lookup could go to, bypassing the
 	# per-connection servers below.
 
-	networking.firewall.enable = true;
+	# networking.firewall.enable = true;
 	services.openssh.enable = true;
 
     # DNS (2026-10-28): systemd-resolved, fed per connection by NetworkManager.
@@ -42,6 +42,7 @@
 
 	# import everything from previous files
 	imports = [	
+        ./hardware-configuration.nix
 		./disks.nix
 		./sshd.nix
 		../common
